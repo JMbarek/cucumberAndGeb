@@ -1,7 +1,7 @@
-package functional.step_definitions
+package step_definitions
 
-import functional.pages.CustomerLoginPage
-import functional.pages.FlaconiHomePage
+import pages.CustomerLoginPage
+import pages.FlaconiHomePage
 
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)

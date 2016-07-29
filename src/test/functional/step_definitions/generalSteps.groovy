@@ -1,5 +1,7 @@
 package step_definitions
 
+
+import cucumber.api.PendingException
 import pages.*
 
 import geb.error.GebException
@@ -12,6 +14,9 @@ Given(~/^the user (?:is )?(?:goes|redirected) to (.*)/) {
         switch (page) {
             case "Flaconi Homepage":
                 to FlaconiHomePage
+                break
+            case "Benutzerkonto anlegen":
+                to CustomerAccountPage
                 break
             case "Benutzerkonto page":
                 to CustomerLoginPage
@@ -48,6 +53,7 @@ When(~/^the user clicks on (.*) link$/) {
             case "Anmelden":
                 at FlaconiHomePage
                 page.clickAnmeldenLink()
+//                to CustomerAccountPage
                 break
             case "Kontakt":
                 at FlaconiHomePage
@@ -165,4 +171,52 @@ Given(~/^the user is successfully logged in$/) { ->
 Then(~/^the user should see a product that contains (.*),(.*) and (.*)$/) { ->
 
 
+}
+/**
+ * Steps Methoden
+ */
+
+
+Given(~/^the user checks "([^"]*)" as salutation$/) { String arg1 ->
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException()
+}
+
+/*
+When(~/^the user registers with <Vorname>,<Nachname> and <E-Mail-Adresse>$/) {
+    String[] names = [ Vorname, Nachname, E-Mail-Adresse]->
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException()
+}
+*/
+
+When(~/^the user gives his <Vorname>$/) { ->
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException()
+}
+And(~/^she checks a newsletter checkbox$/) { ->
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException()
+}
+Then(~/^the user should be logged in to the application$/) { ->
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException()
+}
+
+And(~/^the user should stay logged in$/) { ->
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException()
+}
+
+
+When(~/^the user registers with Vorname,Nachname and E-Mail-Adresse$/) {
+
+    String[][] table = [
+            ["Vorname"  ,  "Nachname"   , "E-Mail-Adresse"  ],
+            [   "testFrau"  ,  "testFrau"  ,"testFrau@web.de" ],
+            [   "testFirstname" , "testLastname"  ,"testEmail@gmail.com" ],
+            [   "Christina"   ,"O'neill" , "oneill@co.uk" ]
+    ] ->
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException()
 }
